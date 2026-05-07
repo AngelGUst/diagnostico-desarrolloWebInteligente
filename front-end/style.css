@@ -1,0 +1,227 @@
+/* ─── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #2d3748;
+  min-height: 100vh;
+}
+
+/* ─── Header ────────────────────────────────────────────────────── */
+header {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ─── Main layout ───────────────────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ─── Cards (form & table sections) ────────────────────────────── */
+.form-section,
+.table-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,.10);
+}
+
+.form-section h2,
+.table-section h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 1.25rem;
+}
+
+/* ─── Form grid ─────────────────────────────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.form-group label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.form-group input {
+  padding: .55rem .75rem;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: .95rem;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────── */
+.btn {
+  padding: .55rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .2s, transform .1s;
+}
+
+.btn:active { transform: scale(.97); }
+.btn:hover  { opacity: .88; }
+
+.btn-primary   { background: #2563eb; color: #fff; }
+.btn-secondary { background: #e2e8f0; color: #4a5568; }
+.btn-danger    { background: #e53e3e; color: #fff; }
+.btn-edit      { background: #d97706; color: #fff; font-size: .82rem; padding: .35rem .85rem; }
+.btn-outline   { background: transparent; border: 1.5px solid #2563eb; color: #2563eb; }
+
+.hidden { display: none !important; }
+
+/* ─── Alert ─────────────────────────────────────────────────────── */
+.alert {
+  padding: .85rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: .95rem;
+  animation: fadeIn .3s ease;
+}
+
+.alert.success { background: #c6f6d5; color: #276749; border-left: 4px solid #38a169; }
+.alert.error   { background: #fed7d7; color: #742a2a; border-left: 4px solid #e53e3e; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* ─── Table header row ──────────────────────────────────────────── */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* ─── Table ─────────────────────────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+
+thead th {
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 700;
+  padding: .75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #c7d2fe;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background .15s;
+}
+
+tbody tr:hover { background: #f7faff; }
+
+tbody td {
+  padding: .7rem 1rem;
+  vertical-align: middle;
+}
+
+.empty-state {
+  text-align: center;
+  color: #a0aec0;
+  padding: 2rem !important;
+  font-style: italic;
+}
+
+.actions-cell {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* ─── Badge (cargo) ─────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 999px;
+  padding: .2rem .7rem;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* ─── Modal ─────────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn .2s ease;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem 2.25rem;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+  text-align: center;
+}
+
+.modal h3 { font-size: 1.15rem; margin-bottom: .6rem; }
+.modal p  { color: #718096; margin-bottom: 1.5rem; }
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column; }
+  .table-header { flex-direction: column; align-items: flex-start; gap: .5rem; }
+}
