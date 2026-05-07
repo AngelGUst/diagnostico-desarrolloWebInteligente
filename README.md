@@ -116,3 +116,6 @@ Abre el archivo `front-end/index.html` directamente en tu navegador, o usa la ex
 | POST | `/api/empleados` | Crear nuevo empleado |
 | PUT | `/api/empleados/{id}` | Actualizar empleado |
 | DELETE | `/api/empleados/{id}` | Eliminar empleado |
+
+### 5. Uso de IA
+Se uso la IA para mejorar el archivo js y css
